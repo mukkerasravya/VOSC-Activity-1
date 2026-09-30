@@ -1,0 +1,120 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #101828, #202b48);
+    color: white;
+    padding: 20px;
+}
+
+.game-container {
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    padding: 30px 20px;
+    background: #182338;
+    border: 1px solid #34435f;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px #0005;
+}
+
+h1 {
+    font-size: 2.3rem;
+    color: #7dd3fc;
+}
+
+.subtitle {
+    margin-top: 8px;
+    color: #aab8ce;
+}
+
+.status {
+    margin: 25px 0 18px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #facc15;
+    min-height: 24px;
+}
+
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+
+.cell {
+    aspect-ratio: 1;
+    border: 1px solid #465675;
+    border-radius: 12px;
+    background: #263650;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.cell:hover:not(:disabled) {
+    background: #354966;
+    transform: scale(1.03);
+}
+
+.cell:disabled {
+    cursor: default;
+}
+
+.cell.x {
+    color: #7dd3fc;
+}
+
+.cell.o {
+    color: #f9a8d4;
+}
+
+.cell.winner {
+    background: #315b50;
+    border-color: #6ee7b7;
+}
+
+#restart {
+    margin-top: 25px;
+    padding: 13px 28px;
+    border: none;
+    border-radius: 25px;
+    background: #38bdf8;
+    color: #102033;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#restart:hover {
+    background: #7dd3fc;
+    transform: translateY(-2px);
+}
+
+.footer {
+    margin-top: 25px;
+    color: #8999b2;
+    font-size: 0.85rem;
+}
+
+@media (max-width: 400px) {
+    h1 {
+        font-size: 1.9rem;
+    }
+
+    .cell {
+        font-size: 2.5rem;
+    }
+}
