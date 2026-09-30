@@ -4,36 +4,105 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#0b1020">
     <title>Tic-Tac-Toe | VOSC Activity 1</title>
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
 
-    <div class="game-container">
-        <h1>Tic-Tac-Toe</h1>
-        <p class="subtitle">The classic X and O game</p>
+    <main class="game-container">
 
-        <div class="status" id="status">
-            Player X's turn
+        <header class="header">
+            <span class="eyebrow">VOSC ACTIVITY 01</span>
+            <h1>Tic<span>-</span>Tac<span>-</span>Toe</h1>
+            <p class="subtitle">A classic game. A smarter challenge.</p>
+        </header>
+
+        <section class="mode-section">
+            <label for="gameMode">GAME MODE</label>
+            <select id="gameMode">
+                <option value="ai">Player vs Computer</option>
+                <option value="pvp">Player vs Player</option>
+            </select>
+
+            <div id="difficultyBox">
+                <label for="difficulty">DIFFICULTY</label>
+                <select id="difficulty">
+                    <option value="easy">Easy</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Unbeatable</option>
+                </select>
+            </div>
+        </section>
+
+        <section class="scoreboard">
+            <div class="score-card x-card">
+                <span id="playerXName">PLAYER X</span>
+                <strong id="scoreX">0</strong>
+            </div>
+
+            <div class="score-card draw-card">
+                <span>DRAWS</span>
+                <strong id="scoreDraw">0</strong>
+            </div>
+
+            <div class="score-card o-card">
+                <span id="playerOName">COMPUTER O</span>
+                <strong id="scoreO">0</strong>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <div class="turn-indicator" id="status" aria-live="polite">
+                <span class="turn-dot"></span>
+                Player X's turn
+            </div>
+
+            <div class="board" id="board" role="group"
+                 aria-label="Tic-Tac-Toe board">
+
+                <button class="cell" data-index="0"
+                        aria-label="Cell 1"></button>
+                <button class="cell" data-index="1"
+                        aria-label="Cell 2"></button>
+                <button class="cell" data-index="2"
+                        aria-label="Cell 3"></button>
+                <button class="cell" data-index="3"
+                        aria-label="Cell 4"></button>
+                <button class="cell" data-index="4"
+                        aria-label="Cell 5"></button>
+                <button class="cell" data-index="5"
+                        aria-label="Cell 6"></button>
+                <button class="cell" data-index="6"
+                        aria-label="Cell 7"></button>
+                <button class="cell" data-index="7"
+                        aria-label="Cell 8"></button>
+                <button class="cell" data-index="8"
+                        aria-label="Cell 9"></button>
+
+            </div>
+
+            <p class="hint" id="hint">
+                Get three in a row to win!
+            </p>
+        </section>
+
+        <div class="actions">
+            <button id="restart" class="primary-button">
+                ↻ &nbsp; New Round
+            </button>
+
+            <button id="resetScores" class="secondary-button">
+                Reset Scores
+            </button>
         </div>
 
-        <div class="board" id="board">
-            <button class="cell" data-index="0"></button>
-            <button class="cell" data-index="1"></button>
-            <button class="cell" data-index="2"></button>
-            <button class="cell" data-index="3"></button>
-            <button class="cell" data-index="4"></button>
-            <button class="cell" data-index="5"></button>
-            <button class="cell" data-index="6"></button>
-            <button class="cell" data-index="7"></button>
-            <button class="cell" data-index="8"></button>
-        </div>
+        <footer>
+            BUILT WITH HTML · CSS · JAVASCRIPT
+        </footer>
 
-        <button id="restart">Restart Game</button>
+    </main>
 
-        <p class="footer">Made for VOSC Activity 1</p>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
